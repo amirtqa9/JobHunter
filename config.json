@@ -1,0 +1,23 @@
+{
+  "cv_template_path": "cv_template.pdf",
+  "output_dir": "output",
+  "anthropic_api_key": "sk-ant-...",
+
+  "search": {
+    "keywords": ["AI", "Machine Learning", "Python", "Data"],
+    "categories": ["Engineering", "Data"],
+    "job_types": ["Full-time"],
+    "locations": ["Tel Aviv", "Remote"],
+    "max_experience_years": 5,
+    "hebrew_levels": ["None", "Low", "Medium"],
+    "min_match_score": 3
+  },
+
+  "applicant": {
+    "first_name": "John",
+    "last_name": "Smith",
+    "email": "example@example.com",
+    "phone": "+972-50-000-0000",
+    "linkedin": "https://linkedin.com/in/example"
+  }
+}
