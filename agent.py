@@ -14,8 +14,13 @@ from secretTLV import scrape_jobs_page, scrape_job_details
 
 # ── helpers ────────────────────────────────────────────────────────────────────
 
-def load_config(path="config.json"):
-    with open(path, "r", encoding="utf-8") as f:
+def load_config(path=None):
+    config_path = Path(path) if path is not None else Path(__file__).with_name("config.json")
+    if not config_path.is_file():
+        raise FileNotFoundError(
+            f"Missing {config_path}. Copy config.example.json to config.json and fill it locally."
+        )
+    with config_path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -169,6 +174,8 @@ def apply_to_job(page, job, applicant, cv_pdf_path):
 
 def main():
     cfg = load_config()
+    if not cfg.get("anthropic_api_key") or cfg["anthropic_api_key"] == "replace-with-your-key":
+        raise ValueError("Set anthropic_api_key in your local config.json before running.")
     search_cfg = cfg["search"]
     applicant = cfg["applicant"]
     output_dir = Path(cfg["output_dir"])

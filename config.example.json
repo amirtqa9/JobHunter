@@ -1,0 +1,21 @@
+{
+  "cv_template_path": "cv-template.pdf",
+  "output_dir": "output",
+  "anthropic_api_key": "replace-with-your-key",
+  "search": {
+    "keywords": ["python"],
+    "categories": [],
+    "job_types": [],
+    "locations": [],
+    "max_experience_years": 5,
+    "hebrew_levels": [],
+    "min_match_score": 2
+  },
+  "applicant": {
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "phone": "",
+    "linkedin": ""
+  }
+}
